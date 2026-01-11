@@ -9,7 +9,8 @@ import sqlite3
 from datetime import datetime, time
 
 # ---------------- BOT TOKEN ----------------
-TOKEN ="8532526397:AAEggRPRSCvkMJRzTLOoW1bPz9rzzPA8MZI"
+import os
+TOKEN = os.environ.get("BOT_TOKEN")
 # ---------------- DATABASE ----------------
 conn = sqlite3.connect("tasks.db", check_same_thread=False)
 cur = conn.cursor()
@@ -372,4 +373,5 @@ def main():
     app.run_polling()
 
 if __name__ == "__main__":
+
     main()
